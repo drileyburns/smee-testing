@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { setStore } from "../Smee/funcStore";
-import { useStore } from "../Smee/useStore";
+import { setStore, useStore } from "react-smee";
 
 let speedsSum = 0;
 let speedsAverage = Infinity;
