@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- <style>
       /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -199,7 +200,8 @@
     </style> -->
     <style>
       body {
-        background-color: rgb(97, 80, 93)
+        background-color: rgb(97, 80, 93);
+        font-family: 'Montserrat', sans-serif;
       }
       
       .container {
@@ -208,6 +210,7 @@
       }
 
       .gen {
+        color: black;
         font-size: 8px;
         margin: 1px;
         height: 14px;
@@ -216,11 +219,19 @@
         border-radius: 1px;
         box-shadow: 1px 1px 2px 0px rgba(150, 21, 81, 0.2);
       }
+      #wrapper {
+        position: fixed;
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 500px;
+      }
     </style>
   </head>
   <body>
     <div>
-      <img src="./TESTSMEE.png" alt="My logo" width=400px height=300px>
+      <img src="./TESTSMEE.png" alt="My logo" id="wrapper">
     </div>
    
   </a>

@@ -1,44 +1,35 @@
 import React from "react";
 import { render } from "react-dom";
 import { setStore, useStore } from "react-smee";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 let speedsSum = 0;
 let speedsAverage = Infinity;
 
 const StyledDiv = styled.div`
-  font-size: 1.5em;
+  margin-top: 10em;
+  font-size: 1em;
   text-align: center;
   color: pink;
 `;
 
-
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
-
 const ButtonCardTotal = styled.button`
-  padding: 0.15em 2em;
-  backgroundColor: red;
+  padding: 0.1em 1em;
+  backgroundcolor: red;
 `;
 
 const ButtonCardA = styled.button`
-  padding: 0.20em 2em;
-  backgroundColor: pink;
+  padding: 0.1em 1em;
 `;
 
 const ButtonCardB = styled.button`
-  padding: 0.20em 2em;
-  backgroundColor: pink;
+  padding: 0.1em 1em;
 `;
 
-const Hr1  = styled.hr`
+const Hr1 = styled.hr`
   border-top: 1px dashed pink;
   border-bottom: 1px dashed pink;
 `;
-
-
 
 const App = () => {
   const cardA = useStore("cardA", 0);
@@ -48,11 +39,9 @@ const App = () => {
   const cardArr = Array.from({ length: cardBTotal }, (_, i) => (
     <CardB key={i} countB={cardB} />
   ));
- 
+
   return (
-   
     <StyledDiv>
-    
       <h3>Card A Counter: {cardA}</h3>
       <h3>Card B Counter: {cardB}</h3>
       <h4>Total B Components: {cardBTotal}</h4>
@@ -64,15 +53,15 @@ const App = () => {
         }}
       >
         Create 1000 B Components
-        </ButtonCardTotal>
-       
-        <Hr1/>
+      </ButtonCardTotal>
+
+      <Hr1 />
 
       <ButtonCardA onClick={() => setStore("cardA", cardA => cardA + 1)}>
         Increment A
       </ButtonCardA>
 
-    <ButtonCardB
+      <ButtonCardB
         onClick={() => {
           const before = window.performance.now("App");
           new Promise(() => setStore("cardB", cardB => cardB + 1))
@@ -88,7 +77,6 @@ const App = () => {
       </div>
       <div className="container">{cardArr}</div>
     </StyledDiv>
-   
   );
 };
 
